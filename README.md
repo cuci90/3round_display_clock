@@ -1,5 +1,5 @@
 # Tri-Weather-Clock
-![IMG20260201083050](https://github.com/user-attachments/assets/4e7c80b1-5a94-458b-9f64-155a707f7744)
+<img src="https://github.com/user-attachments/assets/4e7c80b1-5a94-458b-9f64-155a707f7744" width=50%>
 
 ## Introduction
 Based on following instructable: https://www.instructables.com/Live-Regional-Weather-Clock/
