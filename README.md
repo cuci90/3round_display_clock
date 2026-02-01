@@ -58,6 +58,9 @@ https://github.com/moononournation/Arduino_GFX
 - Change following line in the PNGdec library in file: PNGdec.h --> #define PNG_MAX_BUFFERED_PIXELS ((500*4 + 1)*2)
 - Format SD card with FAT32
 - Create a folder called: 3displays
+- Add 2 background pictures for Hour and Minute display (resolution 360x360 preferred) in the folder with following names:
+  - beach.jpg
+  - berge360.jpg
 - Upload flows.json nodered flow to your nodered instance
 
 Provide your information for the following lines in the code:
