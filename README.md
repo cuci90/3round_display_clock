@@ -75,3 +75,11 @@ Provide your information for the following lines in the code:
 
 Add your longitue and latitude values and your openweathermap API key
 - const char *url = "http://api.openweathermap.org/data/3.0/onecall?lat=YOUR_LAT&lon=YOUR_LONG&appid=YOURAPIKEY&lang=de&exclude=minutely,hourly,daily&units=metric";
+
+## MQTT Commands
+After the display has started automatically there should be 2 new topics created in your MQTT broker:
+- switch
+- dim
+
+Topic switch: Type in any text and it will be displayed on the display. With the text/command "normal" it switches back to the normal seconds-screen.
+Topic dim: Type in a value between 0 - 255 to dim the display
