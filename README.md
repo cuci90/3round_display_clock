@@ -1,4 +1,5 @@
 # Tri-Weather-Clock
+![IMG20260201083050](https://github.com/user-attachments/assets/4e7c80b1-5a94-458b-9f64-155a707f7744)
 
 ## Introduction
 Based on following instructable: https://www.instructables.com/Live-Regional-Weather-Clock/
@@ -14,16 +15,16 @@ but highly modified:
 
 ## Used Libraries
 Dependency Graph
-|-- U8g2 @ 2.36.15 
-|-- JPEGDEC @ 1.8.4
-|-- PNGdec @ 1.1.6
-|-- Adafruit MQTT Library @ 2.6.3 (manually installed)
-|-- GFX Library for Arduino @ 1.6.4 (manually installed)
-|-- HTTPClient @ 3.1.3 (included with ESP32 core)
-|-- SD @ 3.1.3 (included with ESP32 core)
-|-- SPI @ 3.1.3 (included with ESP32 core)
-|-- WiFi @ 3.1.3 (included with ESP32 core)
-|-- FS @ 3.1.3  (included with ESP32 core)
+- U8g2 @ 2.36.15 
+- JPEGDEC @ 1.8.4
+- PNGdec @ 1.1.6
+- Adafruit MQTT Library @ 2.6.3 (manually installed)
+- GFX Library for Arduino @ 1.6.4 (manually installed)
+- HTTPClient @ 3.1.3 (included with ESP32 core)
+- SD @ 3.1.3 (included with ESP32 core)
+- SPI @ 3.1.3 (included with ESP32 core)
+- WiFi @ 3.1.3 (included with ESP32 core)
+- FS @ 3.1.3  (included with ESP32 core)
 
 
 ### Lib depenencies which needs to be manually installed:
@@ -32,25 +33,25 @@ https://github.com/moononournation/Arduino_GFX
 
 
 ## Pin layout
-ESP32-S3-Zero        LCD 1    LCD 2    LCD 3    Micro-SD / SD card slot
-=============        =====    =====    =====    =======================
-5V                   VCC      VCC      VCC
-GND                  GND      GND      GND      GND
-3V3(OUT)                                        VCC
-GP1                                             MOSI
-GP2                                             CLK
-GP3                                             CS
-GP4                                    CS       
-GP5                           CS
-GP6                  CS
-GP7   -> Resistor -> SCL      SCL      SCL
-GP8   -> Resistor -> SDA      SDA      SDA
-GP9   -> Resistor -> IO1      IO1      IO1
-GP10  -> Resistor -> IO2      IO2      IO2
-GP11  -> Resistor -> IO3      IO3      IO3
-GP12  -> Resistor -> RST      RST      RST
-GP13                                            MISO
-GP14                 BL       BL       BL
+| ESP32-S3-Zero | LCD 1 | LCD 2 | LCD 3 | Micro-SD / SD card slot |
+|--------------|-------|-------|-------|-------------------------|
+| 5V           | VCC   | VCC   | VCC   |                         |
+| GND          | GND   | GND   | GND   | GND                     |
+| 3V3 (OUT)    |       |       |       | VCC                     |
+| GP1          |       |       |       | MOSI                    |
+| GP2          |       |       |       | CLK                     |
+| GP3          |       |       |       | CS                      |
+| GP4          |       |       | CS    |                         |
+| GP5          |       | CS    |       |                         |
+| GP6          | CS    |       |       |                         |
+| GP7 → Resistor | SCL | SCL | SCL |                         |
+| GP8 → Resistor | SDA | SDA | SDA |                         |
+| GP9 → Resistor | IO1 | IO1 | IO1 |                         |
+| GP10 → Resistor | IO2 | IO2 | IO2 |                        |
+| GP11 → Resistor | IO3 | IO3 | IO3 |                        |
+| GP12 → Resistor | RST | RST | RST |                        |
+| GP13         |       |       |       | MISO                    |
+| GP14         | BL    | BL    | BL    |                         |
 
 
 ## How to use
