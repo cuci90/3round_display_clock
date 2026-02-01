@@ -1,0 +1,170 @@
+[
+    {
+        "id": "60d87d64ce4f109a",
+        "type": "tab",
+        "label": "3roundDisplay_API",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "452fda571a79e422",
+        "type": "http request",
+        "z": "60d87d64ce4f109a",
+        "name": "",
+        "method": "GET",
+        "ret": "bin",
+        "paytoqs": "ignore",
+        "url": "https://www.wettergefahren.de/DWD/wetter/sat/satwetter/njob_satrad.png",
+        "tls": "",
+        "persist": false,
+        "proxy": "",
+        "insecureHTTPParser": false,
+        "authType": "",
+        "senderr": false,
+        "headers": [],
+        "x": 390,
+        "y": 180,
+        "wires": [
+            [
+                "27d3352d557ef847"
+            ]
+        ]
+    },
+    {
+        "id": "a2e806cd8c93d157",
+        "type": "inject",
+        "z": "60d87d64ce4f109a",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 220,
+        "y": 180,
+        "wires": [
+            [
+                "452fda571a79e422"
+            ]
+        ]
+    },
+    {
+        "id": "c7f3878435021183",
+        "type": "http in",
+        "z": "60d87d64ce4f109a",
+        "name": "Bild",
+        "url": "/radarbild",
+        "method": "get",
+        "upload": false,
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "x": 130,
+        "y": 280,
+        "wires": [
+            [
+                "452fda571a79e422"
+            ]
+        ]
+    },
+    {
+        "id": "aff08fe1b3d3c674",
+        "type": "http response",
+        "z": "60d87d64ce4f109a",
+        "name": "",
+        "statusCode": "",
+        "headers": {
+            "content-type": "image/png",
+            "pragma": "no-cache"
+        },
+        "x": 690,
+        "y": 200,
+        "wires": []
+    },
+    {
+        "id": "27d3352d557ef847",
+        "type": "jimp-image",
+        "z": "60d87d64ce4f109a",
+        "name": "",
+        "data": "payload",
+        "dataType": "msg",
+        "ret": "buf",
+        "parameter1": "170",
+        "parameter1Type": "num",
+        "parameter2": "140",
+        "parameter2Type": "num",
+        "parameter3": "360",
+        "parameter3Type": "num",
+        "parameter4": "360",
+        "parameter4Type": "num",
+        "parameter5": "",
+        "parameter5Type": "msg",
+        "parameter6": "",
+        "parameter6Type": "msg",
+        "parameter7": "",
+        "parameter7Type": "msg",
+        "parameter8": "",
+        "parameter8Type": "msg",
+        "sendProperty": "payload",
+        "sendPropertyType": "msg",
+        "parameterCount": 4,
+        "jimpFunction": "crop",
+        "selectedJimpFunction": {
+            "name": "crop",
+            "fn": "crop",
+            "description": "crop to the given region",
+            "parameters": [
+                {
+                    "name": "x",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the x coordinate to crop form"
+                },
+                {
+                    "name": "y",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the y coordinate to crop form"
+                },
+                {
+                    "name": "w",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the width of the crop region"
+                },
+                {
+                    "name": "h",
+                    "type": "num",
+                    "required": true,
+                    "hint": "the height of the crop region"
+                }
+            ]
+        },
+        "x": 570,
+        "y": 340,
+        "wires": [
+            [
+                "aff08fe1b3d3c674"
+            ]
+        ]
+    },
+    {
+        "id": "55aa5e53784fe323",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "node-red-contrib-image-tools": "2.1.1"
+        }
+    }
+]
